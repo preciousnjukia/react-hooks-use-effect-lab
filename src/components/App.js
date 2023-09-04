@@ -8,6 +8,11 @@ function App() {
   const [score, setScore] = useState(0);
   const currentQuestion = questions.find((q) => q.id === currentQuestionId);
 
+  const updateQuestions = (newQuestions) => {
+    setQuestions(newQuestions);
+    setCurrentQuestion(1);
+  };
+  
   function handleQuestionAnswered(correct) {
     if (currentQuestionId < questions.length) {
       setCurrentQuestion((currentQuestionId) => currentQuestionId + 1);
